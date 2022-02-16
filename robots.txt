@@ -1,0 +1,8 @@
+User-agent:*
+Disallow:/
+Disallow:/index/
+
+User-agent:*
+Disallow:/
+Disallow:/index/
+Disallow:/index/

